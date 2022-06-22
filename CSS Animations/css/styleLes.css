@@ -1,0 +1,19 @@
+div {
+    display: block;
+    margin: 0 auto;
+    width: 888px;
+    height: 661px;
+    background: white;
+    filter: blur(1px);
+    transition: backgroun 4s ease-in 1s, filter 4s ease-out 1s;
+/*
+    transition-property: backgroun;
+    transition-duration: 2s;
+    transition-delay: 1s;
+    transition-timing-function: ease-in;*/
+}
+
+div :hover {
+    background: black;
+    filter: blur(0px);
+}

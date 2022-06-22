@@ -1,0 +1,75 @@
+.aquarium {
+    top: 130px;
+    left: 250px;
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d; /*расположение объектов в 3х-мерном пространстве*/
+    position: relative;
+    animation: aquaCube3dRotation 10s linear 1s infinite normal forwards; 
+    /*анимация куба
+    aquaCube3dRotation имя
+    10s время, которое анимация занимает для завершения одного цикла
+    linear анимация происходит равномерно на протяжении всего времени, без колебаний в скорости
+    infinite бесконеное проигрывание анимации
+    normal все повторы анимации воспроизводятся так, как указано(значение по умолчанию)
+    forwards покажет всю анимацию*/
+
+}
+
+@keyframes aquaCube3dRotation {
+    from { transform: rotate3d(1,1,1,0); }
+    to   { transform: rotate3d(1,1,1,720deg); } 
+}
+
+div:hover {
+    animation-play-state: paused; /*остановка анимации при наведении на куб*/
+}
+
+.aquarium div {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    opacity: 0.8; /*уровень прозрачности элемента*/
+}
+
+.face1 {
+    top: 0;
+    left: 0;
+    transform: translate3d(0,0,200px); /*функция задает перемещение элемента в 3D-пространстве. 
+    Движение происходит по вектору [tx, ty, tz], 
+    где tx перемещение вдоль оси X, ty — перемещение вдоль оси Y, а tz — вдоль оси Z*/
+}
+
+.face2 {
+    top: 0;
+    left: 0;
+    transform: translate3d(0,0,-200px);
+}
+
+.face3 {
+    top: 0;
+    left: 100%;
+    transform-origin: 0 0; /*Координаты точки, относительно которой будет происходить трансформация элемента.*/
+    transform: translate3d(0,0,200px) rotate3d(0,1,0,90deg);
+}
+
+.face4 {
+    top: 100%;
+    left: 0;
+    transform-origin: 0 0;
+    transform: translate3d(0,0,200px) rotate3d(1,0,0,-90deg);
+}
+
+.face5 {
+    top: 0;
+    right: 100%;
+    transform-origin: 100% 0;
+    transform: translate3d(0,0,200px) rotate3d(0,1,0,-90deg);
+}
+
+.face6 {
+    bottom: 100%;
+    left: 0;
+    transform-origin: 0 100%;
+    transform: translate3d(0,0,200px) rotate3d(1,0,0,90deg);
+}

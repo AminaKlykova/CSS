@@ -1,0 +1,14 @@
+.hedgehogCssAnimations {
+    transform-origin: 50% 50% 0px; /*Устанавливает координаты точки, относительно которой будет происходить трансформация элемента*/
+    animation-name: ImgRotate3dAnimation; /*имя анимации*/
+    animation-duration: 10s; /*время, которое анимация занимает для завершения одного цикла*/
+    animation-iteration-count: infinite; /*бесконеное проигрывание анимации*/
+    animation-delay: 2s; 
+}
+
+@keyframes ImgRotate3dAnimation {
+    50%  { transform: rotate3d(2, 0, 1, 180deg); } /*функция задает перемещение элемента в 3D-пространстве. 
+    Движение происходит по вектору [tx, ty, tz], 
+    где tx перемещение вдоль оси X, ty — перемещение вдоль оси Y, а tz — вдоль оси Z*/
+    100% { transform: rotate3d(2, 0, 1, 360deg); }
+}

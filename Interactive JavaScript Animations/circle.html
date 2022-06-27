@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive JavaScript Animations</title>
+</head>
+<body>
+    <svg  width="900" height="650">
+        <circle id="circle1"
+                cx="450"
+                cy="325"
+                r="50"
+                fill="blue"/>               
+    </svg>
+
+    <script>
+        let animationObject = document.getElementById("circle1"); /*поиск элемента с клаасом circle1*/
+
+        window.addEventListener('mousemove', function(e) { /*mousemove мышь наводится на объект*/
+            animationObject.setAttribute("cx",e.pageX); /*setAttribute задает значение атрибута для указанного элемента*/
+            animationObject.setAttribute("cy",e.pageY);           
+        }, false);
+    </script>
+
+</body>
+</html>

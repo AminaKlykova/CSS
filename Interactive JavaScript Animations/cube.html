@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive JavaScript Animations</title>
+    <link rel="stylesheet" href="css/cubestyle.css">
+</head>
+
+<body>
+    <p> <button onclick="jsAnimation()"> Start animation</button> </p> <!-- создание кнопки -->
+    <div id="field">
+        <div id="rect"></div>
+    </div>
+    <script>
+        function jsAnimation() {
+            let animationObject = document.getElementById("rect"); /*поиск элемента с клаасом rect*/
+            let position = 0;
+            let timing = setInterval(currentAnimationFrame, 5); /*setInterval вызов функции регулярно, повторяя через определенный инервал*/
+            function currentAnimationFrame() {
+                if(position == 523) {
+                    clearInterval(timing); /*метод отменяет синхронизированное повторяющееся действие, которое было ранее установлено вызовом setInterval()*/
+                } else {
+                    position++;
+                    animationObject.style.top = position + 'px'; /*изменение стиля top*/
+                    animationObject.style.left = position + 'px'; /*изменение стиля left*/
+                }
+            }
+        } 
+    </script>
+
+</body>
+
+</html>

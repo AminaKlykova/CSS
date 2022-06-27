@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive JavaScript Animations</title>
+    <style>
+        .outher {
+            position: relative;
+        }
+
+        .center-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 35%); /*перемещение элемента в горизонтальном или/и вертикальном направлениях*/
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        if (document.images) {
+            var img1 = new Image(); /*конструктор создает новый элемент Image*/
+            img1.src = "img/Butterfly.jpg"
+            var img2 = new Image();
+            img2.src = "img/Butterfly1.jpg"
+        }
+    </script>
+    <div class="outher" onMouseOver="document.currentImg.src = img2.src;"
+        onMouseOut="document.currentImg.src = img1.src;">
+        <img class="center-img" name="currentImg" src="img/Butterfly.jpg">
+    </div>
+</body>
+
+</html>
